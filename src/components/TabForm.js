@@ -7,7 +7,7 @@ const TabForm = () => {
     name: "Adarsha",
     age: 34,
     email: "adarsha@gmail.com",
-    interests: ["Music", "Cricket"],
+    interests: ["coding", "cricket"],
     theme: "dark",
   });
   return (

@@ -1,7 +1,35 @@
-const Settings = () => {
+const Settings = ({ data, setData }) => {
+  const { theme } = data;
+  const handleDataChange = (e) => {
+    setData((prevState) => ({
+      ...prevState,
+      theme: e.target.name,
+    }));
+  };
   return (
     <div>
-      <h2> Settings</h2>{" "}
+      <div>
+        <label>
+          <input
+            type="radio"
+            name="dark"
+            checked={theme == "dark"}
+            onChange={handleDataChange}
+          />
+          Dark
+        </label>
+      </div>
+      <div>
+        <label>
+          <input
+            type="radio"
+            name="light"
+            checked={theme == "light"}
+            onChange={handleDataChange}
+          />
+          Light
+        </label>
+      </div>
     </div>
   );
 };
