@@ -10,6 +10,16 @@ const TabForm = () => {
     interests: ["coding", "cricket"],
     theme: "dark",
   });
+  const handleNextClick = () => {
+    setActiveTab((prev) => prev + 1);
+  };
+  const handlePrevClick = () => {
+    setActiveTab((prev) => prev - 1);
+  };
+  const handleSubmit = () => {
+    //Make an API call
+    console.log(data);
+  };
   return (
     <div className="">
       <div className="app-header">
@@ -21,6 +31,15 @@ const TabForm = () => {
       </div>
       <div className="tab-container">
         <ActiveTabComponent data={data} setData={setData} />
+      </div>
+      <div>
+        {activeTab > 0 && <button onClick={handlePrevClick}>Prev</button>}
+        {activeTab < tabInfo.length - 1 && (
+          <button onClick={handleNextClick}>Next</button>
+        )}
+        {activeTab === tabInfo.length - 1 && (
+          <button onClick={handleSubmit}>Submit</button>
+        )}
       </div>
     </div>
   );
