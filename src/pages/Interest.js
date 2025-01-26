@@ -1,4 +1,4 @@
-const Interest = ({ data, setData }) => {
+const Interest = ({ data, setData, errors }) => {
   const { interests } = data;
   const handleDataChange = (e, name) => {
     setData((prevState) => ({
@@ -44,6 +44,7 @@ const Interest = ({ data, setData }) => {
           Cricket
         </label>
       </div>
+      {errors.interests && <span className="error">{errors.interests}</span>}
     </div>
   );
 };
